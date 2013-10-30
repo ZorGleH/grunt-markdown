@@ -76,6 +76,9 @@ exports.init = function(grunt) {
 
     templateContext.content = html;
 
+    // Default: include style
+    templateContext.includeStyle = (templateContext.includeStyle === undefined ? true : !!templateContext.includeStyle);
+
     src = _.template(template, templateContext);
     return src;
 
